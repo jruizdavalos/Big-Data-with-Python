@@ -1,3 +1,5 @@
+#the chrome module is installed
+
 modules = ["selenium","chromedriver_autoinstaller"]
 from selenium import webdriver
 import chromedriver_autoinstaller
