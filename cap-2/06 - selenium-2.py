@@ -8,6 +8,9 @@ from selenium.webdriver.common.by import By
 
 options= webdriver.ChromeOptions()
 options.add_experimental_option("detach",True)
+options.add_argument("--headless")
+options.add_argument("--window-size=1920x1080")
+
 driver=webdriver.Chrome(options=options,service=Service(ChromeDriverManager().install()))
 
 url = 'https://www1.sedecatastro.gob.es/CYCBienInmueble/OVCBusqueda.aspx'
