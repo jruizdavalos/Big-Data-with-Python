@@ -1,0 +1,21 @@
+#using mongodb commands in python
+
+from pymongo import MongoClient
+
+client= MongoClient('mongodb://localhost:28000')
+
+db=client['twitter']
+tweets=db['tweets']
+
+tweet= tweets.find_one({"usuario.nick":'bertoldo'}, {'text':1,'_id':0})
+print(tweet)
+
+tweet= tweets.find_one({"usuario.nick":'bertoldo'})
+print('text: ',tweet['text'])
+
+#using find for create a collection of tweets
+
+for t in tweets.find({"usuario.nick":'bertoldo', 'mentions':"herminia"}):
+  print(t['text'])
+
+db.tweets.aggregate([{$group: {_id:"$usuario.nick",num_tweets:{$sum:1}}}])

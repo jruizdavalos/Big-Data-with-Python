@@ -11,7 +11,7 @@ db=client['twitter']
 tweets=db['tweets']
 tweets.drop()
 
-usuarios=[("bertoldo",1320),("hermnia",5320),("aniceto",123),("meliba",411),("franco",2234)]
+usuarios=[("bertoldo",1320),("herminia",5320),("aniceto",123),("meliba",411),("franco",2234)]
 n=100
 
 for i in range(1,n+1):
