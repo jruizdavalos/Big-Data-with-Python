@@ -18,4 +18,3 @@ print('text: ',tweet['text'])
 for t in tweets.find({"usuario.nick":'bertoldo', 'mentions':"herminia"}):
   print(t['text'])
 
-db.tweets.aggregate([{$group: {_id:"$usuario.nick",num_tweets:{$sum:1}}}])
